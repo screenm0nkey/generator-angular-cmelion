@@ -39,7 +39,7 @@ angular.module('<%= scriptAppName %>')
         if(!Config.useMocks) return;
 
         var messages = {};
-        messages.data = [{id: 1, text:'Hello World'}];
+        messages.data = [{id: 1, text:'Hello'},{id: 2, text:'World'}];
         messages.index = {};
 
         angular.forEach(messages.data, function(item, key) {

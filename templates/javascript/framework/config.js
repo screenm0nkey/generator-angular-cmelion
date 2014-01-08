@@ -13,5 +13,8 @@
         .config(function (componentFactoryProvider) { componentFactoryProvider.setViewPath(function (componentSnakeName, componentName) {
             return 'components/' + componentSnakeName + '/views/' + componentSnakeName + '.html';
         })})
+        .run(function (Restangular, APIBaseUrl) {
+            Restangular.setBaseUrl(APIBaseUrl);
+        })
         .value('cgBusyTemplateName','views/angular-busy/default-spinner.html')
         .run(function(editableOptions) {editableOptions.theme = 'bs3'});
