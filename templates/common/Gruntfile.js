@@ -33,6 +33,11 @@ module.exports = function (grunt) {
         return '.tmp/' + path;
     });
 
+    //Exclude tests
+    var excludeTestPattern = '!**/*.test.js';
+    prototypeAppJs.push(excludeTestPattern);
+    appJs.push(excludeTestPattern);
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         yeoman: yeomanConfig,
