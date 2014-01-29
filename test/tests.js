@@ -64,7 +64,7 @@ describe('angular-xl generator', function () {
                         ['app/pages/thing-thing/index/thing-thing-controller.js'],
                         ['app/pages/thing-thing/index/_styles.scss'],
                         ['app/pages/thing-thing/index/views/main-view.html'],
-                        ['test/unit/spec/pages/thing-thing/index/thing-thing-controller.js']
+                        ['app/pages/thing-thing/index/thing-thing-controller.test.js']
                     ]);
                     done();
                 });
@@ -90,7 +90,7 @@ describe('angular-xl generator', function () {
                         ['app/pages/school/details/index/details-controller.js'],
                         ['app/pages/school/details/index/_styles.scss'],
                         ['app/pages/school/details/index/views/main-view.html'],
-                        ['test/unit/spec/pages/school/details/index/details-controller.js']
+                        ['app/pages/school/details/index/details-controller.test.js']
                     ]);
                     done();
                 });
@@ -116,7 +116,7 @@ describe('angular-xl generator', function () {
                         ['app/pages/school/details/one/index/one-controller.js'],
                         ['app/pages/school/details/one/index/_styles.scss'],
                         ['app/pages/school/details/one/index/views/main-view.html'],
-                        ['test/unit/spec/pages/school/details/one/index/one-controller.js']
+                        ['app/pages/school/details/one/index/one-controller.test.js']
                     ]);
                     done();
                 });
@@ -142,7 +142,7 @@ describe('angular-xl generator', function () {
                         ['app/components/thing-thing/thing-thing.js'],
                         ['app/components/thing-thing/_thing-thing.scss'],
                         ['app/components/thing-thing/thing-thing.html'],
-                        ['test/unit/spec/components/thing-thing.js']
+                        ['app/components/thing-thing/thing-thing.test.js']
                     ]);
                     done();
                 });
@@ -164,8 +164,8 @@ describe('angular-xl generator', function () {
             angular.run([], function () {
                 serviceGenerator.run([], function () {
                     helpers.assertFiles([
-                        ['app/scripts/services/service-thing.js'],
-                        ['test/unit/spec/services/service-thing.js']
+                        ['app/scripts/services/service-thing7service-thing.js'],
+                        ['test/unit/spec/services/service-thing/service-thing.test.js']
                     ]);
                     done();
                 });
@@ -187,8 +187,8 @@ describe('angular-xl generator', function () {
             angular.run([], function () {
                 factoryGenerator.run([], function () {
                     helpers.assertFiles([
-                        ['app/scripts/factories/factory-thing.js'],
-                        ['test/unit/spec/factories/factory-thing.js']
+                        ['app/scripts/factories/factory-thing/factory-thing.js'],
+                        ['app/scripts/factories/factory-thing/factory-thing.test.js']
                     ]);
                     done();
                 });
@@ -210,8 +210,8 @@ describe('angular-xl generator', function () {
             angular.run([], function () {
                 filterGenerator.run([], function () {
                     helpers.assertFiles([
-                        ['app/scripts/filters/filter-thing.js'],
-                        ['test/unit/spec/filters/filter-thing.js']
+                        ['app/scripts/filters/filter-thing/filter-thing.js'],
+                        ['app/scripts/filters/filter-thing/filter-thing.test.js']
                     ]);
                     done();
                 });
@@ -233,8 +233,8 @@ describe('angular-xl generator', function () {
             angular.run([], function () {
                 providerGenerator.run([], function () {
                     helpers.assertFiles([
-                        ['app/scripts/providers/provider-thing.js'],
-                        ['test/unit/spec/providers/provider-thing.js']
+                        ['app/scripts/providers/provider-thing/provider-thing.js'],
+                        ['app/scripts/providers/provider-thing/provider-thing.test.js']
                     ]);
                     done();
                 });
@@ -256,8 +256,8 @@ describe('angular-xl generator', function () {
             angular.run([], function () {
                 valueGenerator.run([], function () {
                     helpers.assertFiles([
-                        ['app/scripts/values/value-thing.js'],
-                        ['test/unit/spec/values/value-thing.js']
+                        ['app/scripts/values/value-thing/value-thing.js'],
+                        ['app/scripts/values/value-thing/value-thing.test.js']
                     ]);
                     done();
                 });
@@ -279,8 +279,8 @@ describe('angular-xl generator', function () {
             angular.run([], function () {
                 directiveGenerator.run([], function () {
                     helpers.assertFiles([
-                        ['app/scripts/directives/super-directive.js'],
-                        ['test/unit/spec/directives/super-directive.js']
+                        ['app/scripts/directives/super-directive/super-directive.js'],
+                        ['app/scripts/directives/super-directive/super-directive.test.js']
                     ]);
                     done();
                 });
@@ -324,10 +324,10 @@ describe('angular-xl generator', function () {
             angular.run([], function () {
                 repositoryGenerator.run([], function () {
                     helpers.assertFiles([
-                        ['app/scripts/models/super-thang.js'],
-                        ['test/unit/spec/models/super-thang.js'],
-                        ['app/scripts/repositories/super-thang-repository.js'],
-                        ['test/unit/spec/repositories/super-thang-repository.js']
+                        ['app/scripts/models/super-thang/super-thang.js'],
+                        ['app/scripts/models/super-thang/super-thang.test.js'],
+                        ['app/scripts/repositories/super-thang/super-thang-repository.js'],
+                        ['app/scripts/repositories/super-thang/super-thang-repository.js']
                     ]);
                     done();
                 });
