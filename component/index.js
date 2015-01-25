@@ -24,9 +24,17 @@ var Generator = module.exports = function Generator() {
 util.inherits(Generator, ScriptBase);
 
 Generator.prototype.createComponentFiles = function createComponentFiles() {
+    var pathName = this.slugifiedPath.join('/') + '/' + this.dasherizedName;
+
+    this.viewTemplateUrl = 'components/' + pathName + '/' + this.dasherizedName + '.html';
     this.viewClassesForScss = '.' + this.dasherizedName + '-component';
     this.viewClassesForHTML = this.dasherizedName + '-component';
     var targetPath = this.slugifiedPath.join('/') + '/' + this.dasherizedName;
+
+    //Mae sure path starts with a '/'
+    if (targetPath.indexOf('/') !== 0) {
+      targetPath = '/' + targetPath;
+    }
 
     this.generateSourceAndTest(
         'component',
@@ -37,7 +45,7 @@ Generator.prototype.createComponentFiles = function createComponentFiles() {
 
 
     this.template('../common/component.scss', path.join(this.env.options.appPath, 'components', targetPath, '_' + this.dasherizedName + '.scss'));
-    this.addStyleToComponentScss('../components/' + targetPath + '/' + this.dasherizedName);
+    this.addStyleToComponentScss('../components' + targetPath + '/' + this.dasherizedName);
 
     this.template('../common/component.html', path.join(this.env.options.appPath, 'components', targetPath, this.dasherizedName + '.html'));
 };

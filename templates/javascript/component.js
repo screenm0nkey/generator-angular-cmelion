@@ -7,11 +7,13 @@
 
   function controllerFunction ($scope, $element) {
     var vm = this;
-    vm.text = 'this is the <%= name %> component';
+    vm.text = 'this is the <%= cameledName %> component';
   }
 
   function componentFunction () {
     return {
+      //overrides
+      templateUrl: '<%= viewTemplateUrl %>',
       controller: '<%= cameledName %>ComponentCtrl',
       controllerAs: 'vm'
     };
