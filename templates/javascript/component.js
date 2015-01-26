@@ -1,23 +1,21 @@
 (function(){
   'use strict';
 
-  angular.module('<%= scriptAppName %>.components')
-      .controller('<%= cameledName %>ComponentCtrl', controllerFunction)
-      .component('<%= cameledName %>', componentFunction);
+  angular.module('<%= componentModuleName %>')
+    .controller('<%= componentCtrlName %>', controllerFunction)
+    .component('<%= cameledName %>', componentFunction);
 
-  function controllerFunction ($scope, $element) {
+  function controllerFunction ($scope, $element, $attrs) {
     var vm = this;
     vm.text = 'this is the <%= cameledName %> component';
   }
 
   function componentFunction () {
     return {
-      //overrides
-      templateUrl: '<%= viewTemplateUrl %>',
-      controller: '<%= cameledName %>ComponentCtrl',
+      templateUrl: '<%= templateUrl %>',
+      controller: '<%= componentCtrlName %>',
       controllerAs: 'vm'
     };
   }
-
 }());
 
