@@ -22,14 +22,6 @@ describe('Component: <%= cameledName %>Component', function () {
             scope.$digest();
             expect(element).toHaveClass('<%= componentName %>');
         });
-
-        it('should render text', function () {
-            element = angular.element('<<%= componentName %></<%= componentName %>>');
-            element = $compile(element)(scope);
-            scope.$digest();
-            expect(element.text()).toContain('<%= cameledName %>');
-        });
-
     });
 
     describe('Controller: <%= cameledName %>ComponentCtrl', function () {
@@ -47,10 +39,6 @@ describe('Component: <%= cameledName %>Component', function () {
                     $element: element
                 });
             });
-        });
-
-        it('should render a message', function () {
-            expect(Ctrl.text).toEqual('this is the <%= cameledName %> component');
         });
     });
 });
