@@ -125,7 +125,7 @@ Generator.prototype.generateModuleName = function (module) {
   var name = (this.name.indexOf('/') >= 0) ? this.name.slice(0, this.name.lastIndexOf('/')) : '';
 
   return !name ? this.scriptAppName + '.' + module :
-  this.scriptAppName + '.' + module + '.' + name.replace(/\//g, '.');
+                 this.scriptAppName + '.' + module + '.' + name.replace(/\//g, '.');
 };
 
 Generator.prototype.addStyleToStatesScss = function (style) {
