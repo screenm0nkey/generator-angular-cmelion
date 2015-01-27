@@ -12,9 +12,7 @@
 
   function componentFunction () {
     return {
-      templateUrl: '<%= templateUrl %>',
-      controller: '<%= componentCtrlName %>',
-      controllerAs: 'vm'
+      templateUrl: '<%= templateUrl %>'
     };
   }
 }());

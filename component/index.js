@@ -32,7 +32,7 @@ Generator.prototype.createComponentFiles = function createComponentFiles() {
   }
 
   this.componentCtrlName = this.cameledName + 'ComponentCtrl';
-  this.componentModuleName = this.scriptAppName + '.components.' + this.name.replace(/\//g, '.');
+  this.componentModuleName = this.generateModuleName('components');
   this.templateUrl = ('components/' + targetPath + '/' + this.dasherizedName + '.html').replace(/\/\//g, '/');
   this.viewClassesForScss = '.' + this.dasherizedName + '-component';
   this.viewClassesForHTML = this.dasherizedName + '-component';
@@ -47,10 +47,8 @@ Generator.prototype.createComponentFiles = function createComponentFiles() {
     '../unit/spec/components/' + targetPath
   );
 
-
   this.template('../common/component.scss', newSassTemplatePath);
-  this.addStyleToComponentScss('../components/' + targetPath + '/' + this.dasherizedName);
+  this.addStyleToComponentScss('../components' + targetPath + '/' + this.dasherizedName);
 
   this.template('../common/component.html', newHtmlTemplatePath);
-  debugger
 };
