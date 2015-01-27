@@ -115,6 +115,19 @@ Generator.prototype.appendStyleToScss = function (target, style) {
     }
 };
 
+/*
+ generates a component module name based on the location of the component i.e.
+ generateModuleName('components')
+ 'src/components/header/SignIn' becomes ''app.components.header'
+ 'src/components/header/SignIn/button' becomes ''app.components.header.SignIn'
+ */
+Generator.prototype.generateModuleName = function (module) {
+  var name = (this.name.indexOf('/') >= 0) ? this.name.slice(0, this.name.lastIndexOf('/')) : '';
+
+  return !name ? this.scriptAppName + '.' + module :
+                 this.scriptAppName + '.' + module + '.' + name.replace(/\//g, '.');
+};
+
 Generator.prototype.addStyleToStatesScss = function (style) {
     this.appendStyleToScss('_states.scss', style);
 };
