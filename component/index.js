@@ -44,7 +44,7 @@ Generator.prototype.createComponentFiles = function createComponentFiles() {
         'component',
         'spec/component',
         ('../components/' + _.dasherize(this.name)),
-            '../unit/spec/components/' + targetPath
+         '../unit/spec/components/' + targetPath
     );
 
     this.template('../common/component.scss', newSassTemplatePath);
