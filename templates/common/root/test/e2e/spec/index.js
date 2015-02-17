@@ -1,8 +1,18 @@
-describe('angular-cmelion generator homepage', function() {
-  it('should say Hello', function() {
-    browser.get('#/');
+'use strict';
 
-    var message = element(by.binding('vm.message'));
-    expect(message.getText()).toEqual('Hello world!');
-  });
+describe('angular-cmelion generator homepage', function () {
+    var page = new protractor.Page();
+
+    it('should have an Inquiry Blotter', function () {
+        expect(page.getTitle()).toEqual('Sales Link 2');
+    });
+
+    it('should have an Inquiry Blotter', function () {
+        expect(page.findBy.css('.headerTitle').getText()).toEqual('SALES LINK | MY SUMMARY');
+    });
+
+    it('should have an Inquiry Blotter', function () {
+        expect(page.findBy.model('vm.clientFilter').getText()).toEqual('');
+    });
 });
+
